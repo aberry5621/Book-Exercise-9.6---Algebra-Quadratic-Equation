@@ -55,23 +55,20 @@ int main() {
         // get discriminant
         double get_discriminant() {
             return pow(b, 2.0) - (4 * a * c);
+            
         }
         
         double get_root1() {
-            return 0;
+            double d = get_discriminant();
+            return (-b + pow(d, 0.5)) / (2 * a);
         }
         
-        double get_root1() {
-            return 0;
+        double get_root2() {
+            double d = get_discriminant();
+            return (-b - pow(d, 0.5)) / (2 * a);
         }
         
     };
-    
-    // invoke like
-    // Quadratic = q1(4.2, 3.8, 2.7);
-
-    // cout << "Enter A B and C: ";
-    // cin >> usr_input_a >> usr_input_b >> usr_input_c;
     
     Quadratic quadratic_1;
     
@@ -82,7 +79,18 @@ int main() {
     quadratic_1.get_c();
     cout << "quadratic_1 c value: " << quadratic_1.c << endl;
     
-    quadratic_1.get_discriminant();
+    double d = quadratic_1.get_discriminant();
+    
+    if (d > 0) {
+        // discriminant is positive, output the two roots
+        cout << "The roots are " << quadratic_1.get_root1() << " and " << quadratic_1.get_root2() << endl;
+    } else if(d == 0) {
+        // discriminant is zero, one root
+        cout << "The root is " << quadratic_1.get_root1() << endl;
+    } else {
+        // discriminant is negative, no roots
+        cout << "The equation has no real roots :(" << endl;
+    }
     
     return 0;
 }
