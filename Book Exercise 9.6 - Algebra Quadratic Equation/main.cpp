@@ -70,23 +70,23 @@ int main() {
         
     };
     
-    Quadratic quadratic_1;
+    Quadratic quadratic;
     
-    quadratic_1.get_a();
-    cout << "quadratic_1 a value: " << quadratic_1.a << endl;
-    quadratic_1.get_b();
-    cout << "quadratic_1 b value: " << quadratic_1.b << endl;
-    quadratic_1.get_c();
-    cout << "quadratic_1 c value: " << quadratic_1.c << endl;
+    quadratic.get_a();
+    cout << "quadratic a value: " << quadratic.a << endl;
+    quadratic.get_b();
+    cout << "quadratic b value: " << quadratic.b << endl;
+    quadratic.get_c();
+    cout << "quadratic c value: " << quadratic.c << endl;
     
-    double d = quadratic_1.get_discriminant();
+    double d = quadratic.get_discriminant();
     
     if (d > 0) {
         // discriminant is positive, output the two roots
-        cout << "The roots are " << quadratic_1.get_root1() << " and " << quadratic_1.get_root2() << endl;
+        cout << "The roots are " << quadratic.get_root1() << " and " << quadratic.get_root2() << endl;
     } else if(d == 0) {
         // discriminant is zero, one root
-        cout << "The root is " << quadratic_1.get_root1() << endl;
+        cout << "The root is " << quadratic.get_root1() << endl;
     } else {
         // discriminant is negative, no roots
         cout << "The equation has no real roots :(" << endl;
@@ -94,3 +94,31 @@ int main() {
     
     return 0;
 }
+
+/*
+ TEST DATA
+ 
+ a, b, c: 1.0 3 1
+ Roots: -0.381966 and -2.61803
+ 
+ a, b, c: 1 2.0 1
+ Roots: -1
+ 
+ a, b, c: 1 2 3
+ Roots: none
+ 
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
